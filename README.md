@@ -8,23 +8,12 @@ A modern theme for [JSON Resume](http://jsonresume.org/) which is self-contained
 ## Usage
 
 ```sh
-# Install resume-cli via npm, yarn, pnpm, or whatever package manager you want
-npm install --global resume-cli
-
-# Install @jsonresume/jsonresume-theme-class in the directory resume.json is in
-npm install @jsonresume/jsonresume-theme-class
-
-# Export as an HTML page, ready to be served by any web server
-resume export --theme @jsonresume/jsonresume-theme-class index.html
-
-# Export a PDF document, it's recommended to use your name as the file name
-resume export --theme @jsonresume/jsonresume-theme-class your-name.pdf
+docker run --rm -it -v ./resumes:/json -v /media/www/cv/:/html pknw1/jsonresume:latest
 ```
 
 ### Notes
 
-* It's recommended to declare the `meta.language` property in your JSON Resume for accessibility. This is the [BCP47 tag](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang#language_tag_syntax) for the language your your résumé is written in. For example, `en` for English.
-
+re-factored to work with updated node and from a container
 ## Features
 
 ### JSON Resume 1.0.0
