@@ -19,7 +19,6 @@ jobs:
       - name: build
         run: |
           TIMESTAMP=$(date +%s)
-          cd build
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/jsonresume:${TIMESTAMP} .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/jsonresume:${TIMESTAMP}
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/jsonresume:latest .
